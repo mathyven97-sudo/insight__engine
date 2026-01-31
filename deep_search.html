@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Deep Search - Insight Engine{% endblock %}
+{% block header_title %}Deep Search{% endblock %}
+
+{% block content %}
+<div class="flex flex-col h-full">
+    <!-- Search Bar -->
+    <div class="bg-gray-800 rounded-xl border border-gray-700 p-6 shadow-xl mb-6">
+        <div class="relative">
+            <i class="fas fa-search absolute left-4 top-3.5 text-gray-400"></i>
+            <input type="text" placeholder="Search across 500k+ posts (e.g., 'climate change', 'negative sentiment')"
+                class="w-full bg-gray-900 border border-gray-700 text-gray-100 pl-12 pr-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+            <button
+                class="absolute right-2 top-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-1.5 rounded-lg text-sm transition-colors">
+                Search
+            </button>
+        </div>
+
+        <!-- Filters -->
+        <div class="flex gap-4 mt-4">
+            <select
+                class="bg-gray-700 text-gray-300 border border-gray-600 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500">
+                <option>All Sentiments</option>
+                <option>Positive</option>
+                <option>Negative</option>
+                <option>Neutral</option>
+            </select>
+            <select
+                class="bg-gray-700 text-gray-300 border border-gray-600 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500">
+                <option>Last 24 Hours</option>
+                <option>Last 7 Days</option>
+                <option>All Time</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Results Area -->
+    <div class="bg-gray-800 rounded-xl border border-gray-700 p-6 shadow-xl flex-1">
+        <h3 class="text-lg font-semibold mb-4 text-gray-200">Results</h3>
+        <div class="space-y-4">
+            <div class="p-8 text-center text-gray-500">
+                <i class="fas fa-search text-4xl mb-3 opacity-30"></i>
+                <p>Enter a query to start searching.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

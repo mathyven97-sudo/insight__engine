@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}Settings - Insight Engine{% endblock %}
+{% block header_title %}Settings{% endblock %}
+
+{% block content %}
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <!-- LLM Configuration -->
+    <div class="bg-gray-800 rounded-xl border border-gray-700 p-6 shadow-xl">
+        <h3 class="text-xl font-semibold mb-6 text-gray-200 flex items-center gap-2">
+            <i class="fas fa-robot text-blue-400"></i> LLM Configuration
+        </h3>
+        <form class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-400 mb-1">Model Provider</label>
+                <select
+                    class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-gray-200 focus:outline-none focus:border-blue-500">
+                    <option>OpenAI (GPT-4)</option>
+                    <option>Anthropic (Claude 3.5)</option>
+                    <option>Local (Llama 3)</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-400 mb-1">API Key</label>
+                <input type="password" value="sk-........................"
+                    class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-gray-200 focus:outline-none focus:border-blue-500">
+            </div>
+            <div class="pt-2">
+                <button type="button"
+                    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                    Save Changes
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Data Management -->
+    <div class="bg-gray-800 rounded-xl border border-gray-700 p-6 shadow-xl">
+        <h3 class="text-xl font-semibold mb-6 text-gray-200 flex items-center gap-2">
+            <i class="fas fa-database text-green-400"></i> Data Management
+        </h3>
+        <div class="space-y-4">
+            <div class="flex justify-between items-center p-4 bg-gray-700/30 rounded-lg border border-gray-700">
+                <div>
+                    <h4 class="font-medium text-gray-200">Clear Database</h4>
+                    <p class="text-xs text-gray-400">Remove all ingested posts and insights.</p>
+                </div>
+                <button
+                    class="bg-red-500/10 hover:bg-red-500/20 text-red-400 px-3 py-1.5 rounded-lg text-sm border border-red-500/30 transition-colors">
+                    Clear Data
+                </button>
+            </div>
+            <div class="flex justify-between items-center p-4 bg-gray-700/30 rounded-lg border border-gray-700">
+                <div>
+                    <h4 class="font-medium text-gray-200">Export Reports</h4>
+                    <p class="text-xs text-gray-400">Download insights as PDF/CSV.</p>
+                </div>
+                <button
+                    class="bg-gray-700 hover:bg-gray-600 text-gray-300 px-3 py-1.5 rounded-lg text-sm border border-gray-600 transition-colors">
+                    Export
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- System Info -->
+    <div class="lg:col-span-2 bg-gray-800 rounded-xl border border-gray-700 p-6 shadow-xl">
+        <h3 class="text-xl font-semibold mb-4 text-gray-200">System Information</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="p-4 bg-gray-900 rounded-lg text-center">
+                <p class="text-xs text-gray-500 uppercase">Version</p>
+                <p class="font-mono text-blue-400">v1.2.0-beta</p>
+            </div>
+            <div class="p-4 bg-gray-900 rounded-lg text-center">
+                <p class="text-xs text-gray-500 uppercase">Backend</p>
+                <p class="font-mono text-green-400">FastAPI</p>
+            </div>
+            <div class="p-4 bg-gray-900 rounded-lg text-center">
+                <p class="text-xs text-gray-500 uppercase">Database</p>
+                <p class="font-mono text-yellow-400">DuckDB</p>
+            </div>
+            <div class="p-4 bg-gray-900 rounded-lg text-center">
+                <p class="text-xs text-gray-500 uppercase">Status</p>
+                <p class="font-mono text-green-500">Healthy</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
